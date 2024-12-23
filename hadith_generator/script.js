@@ -3,7 +3,7 @@ const app = express();
 const http = require("http");
 const mongoose = require("mongoose");
 const Hadith = require("./models/hadith");
-const uri = "mongodb://localhost:27017/hadiths";
+const uri = "mongodb+srv://shifanamattil:shifanamattil123@cluster0.gdlm4.mongodb.net/";
 const cors = require("cors")
 
 
@@ -11,10 +11,7 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(uri)
   .then(() => {
     console.log("Connected to MongoDB successfully!");
   })
